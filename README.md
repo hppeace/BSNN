@@ -1,24 +1,14 @@
-查看运行结果：
-任何安装了tensorbord的环境,查看结果运行:
-tensorboard --logdir /home/peace/Downloads/Log/BSNN --port=1234
+
 
 运行：
-账号:peace 密码:peace
 cd /home/peace/Downloads/
-conda activate webui
+conda activate snn
 
 直接运行：
 python ./BSNN/main.py
 
 后台运行：
 nohup python ./BSNN/main.py > ./BSNN/main.log 2>&1 &
-
-
-ps :
-！！！！！！！！！！
-再次运行会清除上一次运行的记录，请务必修改main函数中的 exp_name ，以及trainable函数中的 torch.save(network.state_dict(),f'/home/peace/Downloads/checkpoints/{name}.pth')即可
-！！！！！！！！！！
-默认会拉满两张显卡，如果显卡在运行其他程序会爆显存
 
 选择显卡，使用:
 os.environ['CUDA_VISIBLE_DEVICES'] = '0,1'
